@@ -14,7 +14,7 @@ const List = ()=>(
 
   <ul className="flex flex-col lg:flex-row items-center gap-[30px]
   ">
-        <li><a href="#" className='nav-item'>Acceuil</a></li>
+        <li><a href="#" className='nav-item'>HM</a></li>
         <li><a href="#features" className='nav-item'>Features</a></li>
         <li><a href="#product" className='nav-item'>Product</a></li>
         <li><a href="#clients" className='nav-item'>Clients</a></li>
