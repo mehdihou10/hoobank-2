@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {Home,Login,Signup} from './components';
+import { Routes,Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { verifyAuth } from './store/slices/auth';
+
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+
+    dispatch(verifyAuth());
+
+  },[]);
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+    
+    <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path='about' element={<h1>About Page</h1>} />
+    <Route path="auth/signup" element={<Signup />} />
+    <Route path="auth/login" element={<Login />} />
+
+    </Routes>
+
+
+    </>
   );
 }
 
